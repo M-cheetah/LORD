@@ -1,9 +1,11 @@
 #include <stdio.h> 
 #include <sys/ipc.h> 
 #include <sys/msg.h> 
+#include <string.h>
 
 struct mesg_buffer { 
-	long mesg_type; 
+	long mesg_type;
+	char salt[15];
 	char mesg_text[100]; 
 } message; 
 
@@ -16,7 +18,7 @@ int main()
 
 	msgid = msgget(key, 0666 | IPC_CREAT); 
 	message.mesg_type = 1; 
-
+	strcpy(message.salt,"spongebob");
 	printf("Write Data : "); 
 	fgets(message.mesg_text,sizeof(message.mesg_text),stdin);
 
