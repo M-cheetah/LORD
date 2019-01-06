@@ -20,7 +20,7 @@ struct mesg_buffer {
 int main() 
 { 
 	key_t key; 
-	char pass_salt[10]="spongbob"
+	char pass_salt[15]="viscabarca";
 	int msgid, speed_limit=0,x=1000,i,lane,maxspeed,current=0; 
 	
 	printf("enter the current speed\n");
