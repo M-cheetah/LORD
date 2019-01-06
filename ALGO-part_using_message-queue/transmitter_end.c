@@ -18,7 +18,7 @@ int main()
 
 	msgid = msgget(key, 0666 | IPC_CREAT); 
 	message.mesg_type = 1; 
-	strcpy(message.salt,"spongebob");
+	strcpy(message.salt,"viscabarca");
 	printf("Write Data : "); 
 	fgets(message.mesg_text,sizeof(message.mesg_text),stdin);
 
